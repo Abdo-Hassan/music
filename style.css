@@ -7,6 +7,13 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  background: #0F2027;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left bottom, left top, from(#2C5364), color-stop(#203A43), to(#0F2027));
+  background: linear-gradient(to top, #2C5364, #203A43, #0F2027);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
 }
 
 .app {
@@ -117,4 +124,51 @@ header p {
   border-radius: 50%;
   bottom: 0;
   z-index: -1;
+  -webkit-animation: jump 1s ease;
+  animation: jump 1s ease;
+}
+
+/* small screnns */
+
+@-webkit-keyframes jumpSmall {
+  0% {
+    bottom: 0;
+    left: 10%;
+  }
+
+  50% {
+    bottom: 50%;
+    left: 50%;
+  }
+
+  100% {
+    bottom: 0%;
+    left: 90%;
+  }
+}
+
+@keyframes jumpSmall {
+  0% {
+    bottom: 0;
+    left: 10%;
+  }
+
+  50% {
+    bottom: 50%;
+    left: 50%;
+  }
+
+  100% {
+    bottom: 0%;
+    left: 90%;
+  }
+}
+
+@media(max-width: 768px) {
+  .visual>div {
+    width: 25px;
+    height: 25px;
+    -webkit-animation: jumpSmall 1s ease;
+    animation: jumpSmall 1s ease;
+  }
 }
